@@ -1,4 +1,7 @@
-"""Versioned teaching-data installer for BIOL-510/610. Python >=3.9; stdlib only."""
+"""Versioned teaching-data installer for BIOL-510/610. Python >=3.10; stdlib only.
+
+Includes v1.2 full-cohort convenience functions; existing demo APIs unchanged.
+"""
 from __future__ import annotations
 from pathlib import Path, PurePosixPath
 import hashlib, json, os, shutil, tempfile, urllib.request, zipfile
@@ -95,3 +98,84 @@ def verify_dataset(name: str, project_dir: str | Path, *, registry_path=None) ->
     missing=[rel for rel in expected if not (root/rel).is_file()]
     changed=[rel for rel,digest in expected.items() if (root/rel).is_file() and sha256(root/rel)!=digest]
     return {'dataset':name,'ok':not(missing or changed),'missing':missing,'checksum_mismatch':changed}
+
+
+# Full-cohort TCGA-BLCA v1.2 convenience API.
+COURSE_MATRICES_DATASET = 'course_matrices_v1_2'
+COURSE_MATRICES_RELATIVE_DIR = Path('data/processed/course_matrices')
+COURSE_MATRICES_FILES = {
+    'clinical': 'clinical_course.csv',
+    'counts': 'RNA_counts_course.csv',
+    'tpm': 'RNA_TPM_course.csv',
+    'gene_annotation': 'gene_annotation_course.csv',
+    'sample_mapping': 'rna_sample_mapping_course.csv',
+    'qc': 'reconstruction_qc.json',
+}
+
+
+def install_course_matrices(project_dir: str | Path, *, registry_path=None,
+                            archive_path=None, overwrite=False) -> dict:
+    """Install full-cohort v1.2 from the registry's verified GitHub Release.
+
+    The registry must already be at data/dataset_registry.json (or supplied
+    via registry_path). No Google Drive access is required.
+    """
+    return install_dataset(COURSE_MATRICES_DATASET, project_dir,
+                           registry_path=registry_path,
+                           archive_path=archive_path, overwrite=overwrite)
+
+
+def course_matrix_paths(project_dir: str | Path, *, verify=True,
+                        registry_path=None) -> dict[str, Path]:
+    """Return canonical paths after optional checksum verification.
+
+    Does not load the 60,660-column matrices into memory. Includes the
+    frozen manifest; legacy reference matrices are never used.
+    """
+    root = Path(project_dir).expanduser().resolve()
+    if verify:
+        result = verify_dataset(COURSE_MATRICES_DATASET, root,
+                                registry_path=registry_path)
+        if not result['ok']:
+            raise RuntimeError('Course matrices missing or modified: '
+                               + str(result))
+    base = root / COURSE_MATRICES_RELATIVE_DIR
+    paths = {key: base / filename for key, filename in COURSE_MATRICES_FILES.items()}
+    paths['manifest'] = root / 'data/course_patient_manifest.csv'
+    return paths
+
+
+def fetch_course_registry(project_dir: str | Path, *,
+                          repo='fengcui2/BIOL-510_610_redesign',
+                          overwrite=False) -> Path:
+    """Download the official registry, without requiring Google Drive.
+
+    Will not replace an existing registry unless overwrite=True. The
+    downloaded registry is parsed and checked for the v1.2 dataset entry.
+    Individual archives and files are verified during install_dataset().
+    """
+    root = Path(project_dir).expanduser().resolve()
+    destination = root / 'data/dataset_registry.json'
+    if destination.exists() and not overwrite:
+        registry = load_registry(destination)
+        if COURSE_MATRICES_DATASET not in registry.get('datasets', {}):
+            raise ValueError('Existing registry has no course_matrices_v1_2; '
+                             'set overwrite=True to refresh it')
+        return destination
+    url = ('https://raw.githubusercontent.com/' + repo
+           + '/main/data/dataset_registry.json')
+    with urllib.request.urlopen(url, timeout=60) as response:
+        payload = response.read()
+    registry = json.loads(payload.decode('utf-8'))
+    if registry.get('schema_version') != 1 or COURSE_MATRICES_DATASET not in registry.get('datasets', {}):
+        raise ValueError('Downloaded registry is invalid or lacks v1.2')
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(mode='wb', dir=destination.parent,
+                                     prefix='.registry_', delete=False) as tmp:
+        tmp.write(payload)
+        temporary = Path(tmp.name)
+    try:
+        os.replace(temporary, destination)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return destination
