@@ -44,6 +44,24 @@
         "data/raw/rna_seq/star_counts/edd5bf74-7675-4c67-9863-2369b2f72bfa.rna_seq.augmented_star_gene_counts.tsv": "59e327817638d6cce00573ca66e446c544818f81ef96672c226ae1cb95bd459e"
       },
       "size_bytes": 5366604
-    }
+    },
+  "course_matrices_v1_2": {
+    "version": "1.2",
+    "description": "Prepared full-cohort TCGA-BLCA clinical table and available primary-tumor RNA count/TPM matrices, plus frozen manifest and QC",
+    "url": "https://github.com/fengcui2/BIOL-510_610_redesign/releases/download/data-v1.2/tcga_blca_course_matrices_v1_2.zip",
+    "archive_name": "tcga_blca_course_matrices_v1_2.zip",
+    "archive_sha256": "290b86a32a499221abe618edaefffc4444d7d4f3a7bf40dd24cbd579b7e755fb",
+    "files": {
+      "data/processed/course_matrices/clinical_course.csv": "0c5cee61772849f4c5a3f0b91ed3063f5c51380a85826861df2cd788cf8faddb",
+      "data/processed/course_matrices/RNA_counts_course.csv": "aec9c421a096685bd5e9a74d7cb25918f588df817522573284161605ce522308",
+      "data/processed/course_matrices/RNA_TPM_course.csv": "b3d40ecfd913cd8ec85f182576bfce1fe0db3a08a958997d16c7ad9c604541b0",
+      "data/processed/course_matrices/gene_annotation_course.csv": "c13179f3155f1613a76927a0da7379ce144b442874f365e399cfa733e0af1066",
+      "data/processed/course_matrices/rna_sample_mapping_course.csv": "e882cc431fff5da6dbb67f204e488a763c6119688bf360a28ecf12c47230a24e",
+      "data/processed/course_matrices/reconstruction_qc.json": "92469c66fd4781bcce4f2ee39946024fdccd338426d7aade81c7a873afc5808a",
+      "data/processed/course_matrices/reference_comparison.json": "22f8d68d2459d017d92aae12831a1e0ae3532d71a3eec57e6285120706bf3595",
+      "data/course_patient_manifest.csv": "12a7dc221400efe8c21483c5ac12cc83d3e9e5d93139e66f0e00180ee2510635"
+    },
+    "size_bytes": 59126783
+  }
   }
 }
