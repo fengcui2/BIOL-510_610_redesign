@@ -1,0 +1,53 @@
+{
+  "uni2h_development_v1": {
+    "version": "1.0.0",
+    "description": "Frozen TCGA-BLCA UNI2-h patient-level histopathology embeddings for representation learning and multimodal teaching; 295 development patients only, provisional stage labels.",
+    "url": null,
+    "release_page": "https://github.com/fengcui2/BIOL-510_610_redesign/releases/tag/uni2h-development-v1.0.0",
+    "archive_name": "tcga_blca_uni2h_development_embeddings_v1.zip",
+    "archive_sha256": "6a85e100dfd90e26870e047071b10c0f4f480df0e97be53710009bef618b3550",
+    "files": {
+      "tcga_blca_uni2h_development_embeddings_v1/README.md": "55e91ced7157dfaec9d87afe98555f58702a3b82b169ff499fa130d803718cae",
+      "tcga_blca_uni2h_development_embeddings_v1/SHA256SUMS.txt": "1e72dc2d0a080e80931e18a8f2b6822da636fdbe52ad3c47fd566ac2d645a94d",
+      "tcga_blca_uni2h_development_embeddings_v1/UNI2h_training_embeddings.npy": "3af2c879b03b720223365ca41d0abb76a2cad93ae55bee672624e9ae56da7529",
+      "tcga_blca_uni2h_development_embeddings_v1/UNI2h_training_metadata.csv": "0703af0e72ae1afae2fefe145a8c2e996e90aaae73cf6e8cc58f7a44309eb8c7",
+      "tcga_blca_uni2h_development_embeddings_v1/frozen_development_manifest.csv": "e1e7a02befa193b724787b80293d73f06ecc7ed74ecae326f7277000584fbb5d",
+      "tcga_blca_uni2h_development_embeddings_v1/provenance.json": "5b7af25c28ea235ec036e3565035900fd7ff0812b71758a189691ddf0fc3837e",
+      "tcga_blca_uni2h_development_embeddings_v1/training_uni2h_coverage.csv": "cb04cb477c81c3b1beafaf870125c95e4b83a3d50ea426a2d2b5acd3ebe2bec9"
+    },
+    "size_bytes": 1690295,
+    "file_sizes_bytes": {
+      "README.md": 2181,
+      "SHA256SUMS.txt": 540,
+      "UNI2h_training_embeddings.npy": 1812608,
+      "UNI2h_training_metadata.csv": 24618,
+      "frozen_development_manifest.csv": 21144,
+      "provenance.json": 1522,
+      "training_uni2h_coverage.csv": 22351
+    },
+    "storage": "private_google_drive",
+    "drive_path": "BIOL-510_610_redesign/data/teaching/releases/uni2h/tcga_blca_uni2h_development_embeddings_v1.zip",
+    "access": "restricted",
+    "redistribution_status": "permission_pending",
+    "checkpoint_identifier": "NOT_VERIFIED",
+    "extractor_version": "NOT_VERIFIED",
+    "cohort": {
+      "development_patients": 295,
+      "holdout_patients_excluded": 74,
+      "stage_II": 91,
+      "stage_III": 107,
+      "stage_IV": 97
+    },
+    "embeddings": {
+      "shape": [
+        295,
+        1536
+      ],
+      "dtype": "float32",
+      "model": "UNI2-h",
+      "aggregation": "patient_level"
+    },
+    "labels": "provisional",
+    "intended_notebook": 17
+  }
+}
