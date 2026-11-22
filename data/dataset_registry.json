@@ -44,68 +44,6 @@
         "data/raw/rna_seq/star_counts/edd5bf74-7675-4c67-9863-2369b2f72bfa.rna_seq.augmented_star_gene_counts.tsv": "59e327817638d6cce00573ca66e446c544818f81ef96672c226ae1cb95bd459e"
       },
       "size_bytes": 5366604
-    },
-  "course_matrices_v1_2": {
-    "version": "1.2",
-    "description": "Prepared full-cohort TCGA-BLCA clinical table and available primary-tumor RNA count/TPM matrices, plus frozen manifest and QC",
-    "url": "https://github.com/fengcui2/BIOL-510_610_redesign/releases/download/data-v1.2/tcga_blca_course_matrices_v1_2.zip",
-    "archive_name": "tcga_blca_course_matrices_v1_2.zip",
-    "archive_sha256": "290b86a32a499221abe618edaefffc4444d7d4f3a7bf40dd24cbd579b7e755fb",
-    "files": {
-      "data/processed/course_matrices/clinical_course.csv": "0c5cee61772849f4c5a3f0b91ed3063f5c51380a85826861df2cd788cf8faddb",
-      "data/processed/course_matrices/RNA_counts_course.csv": "aec9c421a096685bd5e9a74d7cb25918f588df817522573284161605ce522308",
-      "data/processed/course_matrices/RNA_TPM_course.csv": "b3d40ecfd913cd8ec85f182576bfce1fe0db3a08a958997d16c7ad9c604541b0",
-      "data/processed/course_matrices/gene_annotation_course.csv": "c13179f3155f1613a76927a0da7379ce144b442874f365e399cfa733e0af1066",
-      "data/processed/course_matrices/rna_sample_mapping_course.csv": "e882cc431fff5da6dbb67f204e488a763c6119688bf360a28ecf12c47230a24e",
-      "data/processed/course_matrices/reconstruction_qc.json": "92469c66fd4781bcce4f2ee39946024fdccd338426d7aade81c7a873afc5808a",
-      "data/processed/course_matrices/reference_comparison.json": "22f8d68d2459d017d92aae12831a1e0ae3532d71a3eec57e6285120706bf3595",
-      "data/course_patient_manifest.csv": "12a7dc221400efe8c21483c5ac12cc83d3e9e5d93139e66f0e00180ee2510635"
-    },
-    "size_bytes": 59126783
-  },
-    "histopathology_demo_v1_3": {
-    "version": "1.3",
-    "description": "Real TCGA-BLCA H&E overview, tissue mask, 30 QC-passing patches, and provenance for Notebook 5",
-    "url": "https://github.com/fengcui2/BIOL-510_610_redesign/releases/download/data-v1.3/tcga_blca_he_demo_v1_3.zip",
-    "archive_name": "tcga_blca_he_demo_v1_3.zip",
-    "archive_sha256": "bd648d837dcb67218825a076e21248ca64201bb9c4153a05f93db948ee9a88cd",
-    "files": {
-      "data/histopathology_demo_v1_3/patch_metadata.csv": "bcc07244477a4df9f31cc6d551d59aef9c62c30accc2a6acc2858d6ff10d4985",
-      "data/histopathology_demo_v1_3/patches/patch_001_x77556_y28100.png": "45ef5da02b0cd23a535aa28fee7c69ef8ce7c08c50709299666add67e60506cc",
-      "data/histopathology_demo_v1_3/patches/patch_002_x86548_y52828.png": "5fb93d6033154b9b9824dc22c99024babbd79b0a14eeacf3879a19095f288a8f",
-      "data/histopathology_demo_v1_3/patches/patch_003_x104532_y40464.png": "385bc02c6df943316a03b70ed143b9631980d912eba9dfd8514f60da8eca7014",
-      "data/histopathology_demo_v1_3/patches/patch_004_x110152_y78680.png": "f45299484d0d62713345a8c1a8fc0528233b8497b23d30057f8d976259edce55",
-      "data/histopathology_demo_v1_3/patches/patch_005_x69688_y64068.png": "d6af9ad0e92816f722bde7b4cdc2adbe63400169d6082fd8b4e573b708d72d74",
-      "data/histopathology_demo_v1_3/patches/patch_006_x89920_y62944.png": "5ec46862de2876cadfd30790d9c125a23f77bbb4590b3cd5aefb2e0dbf40774b",
-      "data/histopathology_demo_v1_3/patches/patch_007_x92168_y42712.png": "98bbe79bfbc389c492065f9c73efe300bd5621eef2c3c57c99173fdc653c8c04",
-      "data/histopathology_demo_v1_3/patches/patch_008_x79804_y61820.png": "73e524100c9441e53b0449577a0167f69fe0bad2ecc153734391cb5adf6819b7",
-      "data/histopathology_demo_v1_3/patches/patch_009_x74184_y41588.png": "c8f324f1de0d5f2c44104f289ae10b85865c6bbebc9439fdfc4388587d25651a",
-      "data/histopathology_demo_v1_3/patches/patch_010_x107904_y76432.png": "ef98ff69f0d77a44e8c3a7105a602c5eda2838df88ca9ece5862aa9667fc020d",
-      "data/histopathology_demo_v1_3/patches/patch_011_x80928_y31472.png": "0703f576ca528034d9174a91806007573b95ea5fbc759106ef8252bf50c8ad84",
-      "data/histopathology_demo_v1_3/patches/patch_012_x92168_y38216.png": "52afc013fdbe81877a617a91b18168e7b93d218306f011b666bff0a0171bf925",
-      "data/histopathology_demo_v1_3/patches/patch_013_x84300_y50580.png": "a6cec5259960b2478d0b6a01fd41de650acf6978c8b6b34bf3750c26719a87bf",
-      "data/histopathology_demo_v1_3/patches/patch_014_x93292_y82052.png": "0520d34b5fc11cbab4066e86b906ae7e91d2ba2d9be133c01df98db57fcce01e",
-      "data/histopathology_demo_v1_3/patches/patch_015_x111276_y66316.png": "7016b01f3ec891488d6058af033ad696a11d3fa969e6b687d1ba2f5afa44a570",
-      "data/histopathology_demo_v1_3/patches/patch_016_x112400_y47208.png": "2b265b38a261ed208649789a744fb09633abb74fe1472f2551e71c86cabd720a",
-      "data/histopathology_demo_v1_3/patches/patch_017_x83176_y39340.png": "e52621c70adadad9cd95c521536dd7ddaab914033a291d20fbda6aad40aaa217",
-      "data/histopathology_demo_v1_3/patches/patch_018_x105656_y53952.png": "4bf50f244f4f5028e94b6fbcd2832b03bfbf857f7901930bb5155468f85d2099",
-      "data/histopathology_demo_v1_3/patches/patch_019_x106780_y40464.png": "b529a0f24ccb4ff7bc374564656f74b46ee80347514ba54f80fbe56a0d562664",
-      "data/histopathology_demo_v1_3/patches/patch_020_x97788_y55076.png": "038d75c91fa0464cc7c45642042cfbe7ada1c78abfd73b6b026f317701eb1492",
-      "data/histopathology_demo_v1_3/patches/patch_021_x105656_y71936.png": "e7d8a39daff198bc13994c28e40c57734c89891a237f72f0b3cda0e40b231559",
-      "data/histopathology_demo_v1_3/patches/patch_022_x78680_y22480.png": "220b2a0724dbddf1fae022a73a651b288729e0fbf7ac1033812df3660263c696",
-      "data/histopathology_demo_v1_3/patches/patch_023_x80928_y49456.png": "b627d716bf982b2404201f32a40ed5c6523ad1223bf0d10e3d7c360fd59144ab",
-      "data/histopathology_demo_v1_3/patches/patch_024_x105656_y19108.png": "966685195adb2fdec34e8cf8e049afceb1f54d8b31499a3e16182b695ffbfc75",
-      "data/histopathology_demo_v1_3/patches/patch_025_x85424_y25852.png": "e7a7164d42d0a59bcc83f8cac1eecc9bec423ae2bfe04d258bd2bcd18095c565",
-      "data/histopathology_demo_v1_3/patches/patch_026_x94416_y73060.png": "709edef9ec8c3799c64ba580fecc2c5eaeed6da72841853835cdfb60d71c5cf6",
-      "data/histopathology_demo_v1_3/patches/patch_027_x95540_y16860.png": "8a317e2f69226854a609d5771e016c1030a933ccaf3070b3acd2a20f3c8ecfb6",
-      "data/histopathology_demo_v1_3/patches/patch_028_x85424_y10116.png": "8aad4a565b91d035bcaae8908610f0d2bc0474f534d0a1e52b195c8b6e51aef7",
-      "data/histopathology_demo_v1_3/patches/patch_029_x67440_y74184.png": "b8eaf4510f3c61439f73ec1d17cefe4d975bede6b7dbdfb425c4277cafac7622",
-      "data/histopathology_demo_v1_3/patches/patch_030_x76432_y7868.png": "88ef3406456e8d93ad3c8a09e95d6623adb24444c12127a7f29b97c276730d66",
-      "data/histopathology_demo_v1_3/provenance.json": "4d4761b2e8442cc11a8ddad71412b66bf49e134587fba69f2ee6a4f005f1233c",
-      "data/histopathology_demo_v1_3/slide_overview_8mpp.png": "a9a06b5a4680b4df16d6ac6d688af6a71c4047274e259bf9ce1ce412c609eebe",
-      "data/histopathology_demo_v1_3/tissue_mask_8mpp.png": "30031dccde6137a1bb607edac4ed23c1d937fabfc4f9159ba3edf52873aa0565"
-    },
-    "size_bytes": 35655647
-  }
+    }
   }
 }
