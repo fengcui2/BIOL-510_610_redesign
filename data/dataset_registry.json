@@ -157,6 +157,44 @@
       },
       "labels": "provisional",
       "intended_notebook": 17
-    }
+    },
+    
+"uni2h_holdout_v1": {
+  "version": "1.0.0",
+  "description": "Frozen TCGA-BLCA UNI2-h patient-level histopathology embeddings for independent evaluation in Notebook 23; 74 eligible holdout patients with provisional pathological stage labels.",
+  "url": null,
+  "archive_name": "tcga_blca_uni2h_holdout_embeddings_v1.zip",
+  "archive_sha256": "d9e08fef7df9b9904d71fa8733dc626b7a8a7bcce49cb30bf9bf76abc66d8bfe",
+  "size_bytes": 427785,
+  "storage": "private_google_drive",
+  "drive_path": "BIOL-510_610_redesign/data/teaching/releases/uni2h_holdout/tcga_blca_uni2h_holdout_embeddings_v1.zip",
+  "access": "restricted",
+  "redistribution_status": "permission_pending",
+  "checkpoint_identifier": "NOT_VERIFIED",
+  "extractor_version": "NOT_VERIFIED",
+  "cohort": {
+    "original_holdout_patients": 75,
+    "eligible_holdout_patients": 74,
+    "excluded_patients": 1,
+    "development_overlap": 0,
+    "stage_II": 25,
+    "stage_III": 23,
+    "stage_IV": 26
+  },
+  "embeddings": {
+    "shape": [74, 1536],
+    "dtype": "float32",
+    "model": "UNI2-h",
+    "aggregation": "mean_of_patch_embeddings_within_slide_then_equal_weight_mean_of_slides",
+    "source_slides": 87,
+    "source_patches": 115188
+  },
+  "labels": "provisional",
+  "split": "holdout",
+  "intended_notebook": 23,
+  "related_dataset": "uni2h_development_v1",
+  "evaluation_policy": "Frozen development-selected models only; no holdout-based tuning or model selection.",
+  "holdout_access_history": "Previously accessed for research imaging-only evaluation."
+  }
   }
 }
