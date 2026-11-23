@@ -158,14 +158,20 @@
       "labels": "provisional",
       "intended_notebook": 17
     },
-    
+
 "uni2h_holdout_v1": {
   "version": "1.0.0",
-  "description": "Frozen TCGA-BLCA UNI2-h patient-level histopathology embeddings for independent evaluation in Notebook 23; 74 eligible holdout patients with provisional pathological stage labels.",
+  "description": "Frozen TCGA-BLCA UNI2-h patient-level embeddings for independent evaluation; 74 eligible holdout patients, provisional pathological stage labels.",
   "url": null,
   "archive_name": "tcga_blca_uni2h_holdout_embeddings_v1.zip",
-  "archive_sha256": "d9e08fef7df9b9904d71fa8733dc626b7a8a7bcce49cb30bf9bf76abc66d8bfe",
-  "size_bytes": 427785,
+  "archive_sha256": "8088384cb12b25cb30f50a7decc2aadb5e5c668c2954f5636588ecadf8c125ff",
+  "size_bytes": 427324,
+  "files": {
+    "teaching_holdout_v1/UNI2h_holdout_embeddings.npy": "d6f15a66121d44b079ff9569fb69d1e77c072019ed4a886ed2eb0fd857677e45",
+    "teaching_holdout_v1/UNI2h_holdout_metadata.csv": "5fa88626ee827418bac8899fedd2a8b99f5d217ed7da44f064f1657e8ae0f3e",
+    "teaching_holdout_v1/provenance.json": "9d0129758e84cbb5dc8fa8cf2d54a5d9363f8076a3c4486be5e7adbe982a69",
+    "teaching_holdout_v1/SHA256SUMS.txt": "5a686ec0a49cef13f855ce60555d4d565700f06937b06e4cd6feecf9fc2932e"
+  },
   "storage": "private_google_drive",
   "drive_path": "BIOL-510_610_redesign/data/teaching/releases/uni2h_holdout/tcga_blca_uni2h_holdout_embeddings_v1.zip",
   "access": "restricted",
